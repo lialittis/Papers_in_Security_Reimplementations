@@ -25,8 +25,13 @@ Applications
   - [paper link](https://dl.acm.org/doi/abs/10.1145/3591225)
   - [useful reference](https://www.aussieai.com/research/cuda)
 
-## Ongoing Paper
+## Ongoing Projects
+
+### cuCatch
+
+![Instructions](./cuCatch/Readme.md)
+
+## Finished Projects
 
 
 
-## 

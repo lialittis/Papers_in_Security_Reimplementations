@@ -1,7 +1,7 @@
 # NDSS 2025 Accepted Papers [System Safety Related]
 
 
-1. A Comprehensive Memory Safety Analysis of Bootloaders
+## 1. A Comprehensive Memory Safety Analysis of Bootloaders
 
 Jianqiang Wang, Meng Wang (CISPA Helmholtz Center for Information Security); Qinying Wang (Zhejiang University); Nils Langius (Leibniz Universität Hannover); Li Shi (ETH Zurich); Ali Abbasi, Thorsten Holz (CISPA Helmholtz Center for Information Security)
 
@@ -10,7 +10,7 @@ Abstract: The bootloader plays an important role during the boot process, as it 
 Topics: Software/firmware/hardware security analysis, customization, and extensions; Trustworthy computing software and hardware to secure networks and systems
 
 
-2. ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
+## 2. ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
 
 Myungsuk Moon, Minhee Kim, Joonkyo Jung, Dokyung Song (Yonsei University)
 
@@ -20,7 +20,7 @@ We present ASGARD, the first virtualization-based TEE solution designed to prote
 
 Topics: Security and privacy of mobile/smartphone platforms and their operating systems; Trustworthy computing software and hardware to secure networks and systems
 
-3. BitShield: Defending Against Bit-Flip Attacks on DNN Executables
+## 3. BitShield: Defending Against Bit-Flip Attacks on DNN Executables
 Yanzuo Chen, Yuanyuan Yuan, Zhibo Liu (The Hong Kong University of Science and Technology); Sihang Hu, Tianxiang Li (Huawei Technologies); Shuai Wang (The Hong Kong University of Science and Technology)
 
 Abstract: Recent research has demonstrated the severity and prevalence of bit-flip attacks (BFAs; e.g., with Rowhammer techniques) on deep neural networks (DNNs). BFAs can manipulate DNN prediction and completely deplete DNN intelligence, and can be launched against both DNNs running on deep learning (DL) frameworks like PyTorch, as well as those compiled into standalone executables by DL compilers. While BFA defenses have been proposed for models on DL frameworks, we find them incapable of protecting DNN executables due to the new attack vectors on these executables.
@@ -30,7 +30,7 @@ This paper proposes the first defense against BFA for DNN executables. We first 
 Topics: Security and privacy of systems based on machine learning, federated learning, AI, and large language models
 
 
-4. Blindfold: Confidential Memory Management by Untrusted Operating System
+## 4. Blindfold: Confidential Memory Management by Untrusted Operating System
 
 Caihua Li, Seung-seob Lee, Lin Zhong (Yale University)
 
@@ -39,7 +39,7 @@ Abstract: Confidential Computing (CC) has received increasing attention in recen
 Topics: Security and privacy of mobile/smartphone platforms and their operating systems; Trustworthy computing software and hardware to secure networks and systems
 
 
-5. CCTAG: Configurable and Combinable Tagged Architecture
+## 5. CCTAG: Configurable and Combinable Tagged Architecture
 
 Zhanpeng Liu (Peking University); Yi Rong (Tsinghua University); Chenyang Li (Peking University); Wende Tan (Tsinghua University); Yuan Li (Zhongguancun Laboratory); Xinhui Han (Peking University); Songtao Yang (Zhongguancun Laboratory); Chao Zhang (Tsinghua University)
 
@@ -49,21 +49,21 @@ We present CCTAG, a lightweight architecture that simplifies the integration of 
 
 Topics: Anti-malware techniques: detection, analysis, and prevention; Software/firmware/hardware security analysis, customization, and extensions
 
-6. Detecting Ransomware Despite I/O Overhead: A Practical Multi-Staged Approach
+## 6. Detecting Ransomware Despite I/O Overhead: A Practical Multi-Staged Approach
 Christian van Sloun, Vincent Woeste (RWTH Aachen University); Konrad Wolsing (RWTH Aachen University & Fraunhofer FKIE); Jan Pennekamp, Klaus Wehrle (RWTH Aachen University)
 
 Abstract: Ransomware attacks have become one of the most widely feared cyber attacks for businesses and home users. Since attacks are evolving and use advanced phishing campaigns and zero-day exploits, everyone is at risk, ranging from novice users to experts. As a result, much research has focused on preventing and detecting ransomware attacks, with real-time monitoring of I/O activity being the most prominent approach for detection. These approaches have in common that they inject code into the execution of the operating system’s I/O stack, a more and more optimized system. However, they seemingly do not consider the impact the integration of such mechanisms would have on system performance or only consider slow storage mediums, such as rotational hard disk drives. This paper analyzes the impact of monitoring different features of relevant I/O operations for Windows and Linux. We find that even simple features, such as the entropy of a buffer, can increase execution time by 350% and reduce SSD performance by up to 75%. To combat this degradation, we propose adjusting the number of monitored features based on a process’s behavior in real-time. To this end, we design and implement a multi-staged IDS that can adjust overhead by moving a process between stages that monitor different numbers of features. By moving seemingly benign processes to stages with fewer features and less overhead while moving suspicious processes to stages with more features to confirm the suspicion, the average time a system requires to perform I/O operations can be reduced drastically. We evaluate the effectiveness of our design by combining actual I/O behavior from a public dataset with the measurements we gathered for each I/O operation and found that a multi-staged design can reduce the overhead to I/O operations by an order of magnitude while maintaining similar detection accuracy of traditional single-staged approaches. As a result, real-time behavior monitoring for ransomware detection becomes feasible despite its inherent overhead impacts.
 
 Topics: Anti-malware techniques: detection, analysis, and prevention; Cyber attack (e.g., APTs, botnets, DDoS) prevention, detection, investigation, and response
 
-7. Evaluating Machine Learning-Based IoT Device Identification Models for Security Applications
+## 7. Evaluating Machine Learning-Based IoT Device Identification Models for Security Applications
 Eman Maali (Imperial College London); Omar Alrawi (Georgia Institute of Technology); Julie McCann (Imperial College London)
 
 Abstract: With the proliferation of IoT devices, network device identification is essential for effective network management and security. Many exhibit performance degradation despite the potential of machine learning-based IoT device identification solutions. Degradation arises from the assumption of static IoT environments that do not account for the diversity of real-world IoT networks, as devices operate in various modes and evolve over time. In this paper, we evaluate current IoT device identification solutions using curated datasets and representative features across different settings. We consider key factors that affect real-world device identification, including modes of operation, spatio-temporal variations, and traffic sampling, and organise them into a set of attributes by which we can evaluate current solutions. We then use machine learning explainability techniques to pinpoint the key causes of performance degradation. This evaluation uncovers empirical evidence of what continuously identifies devices, provides valuable insights, and practical recommendations for network operators to improve their IoT device identification in operational deployments.
 
 Topics: Network security policy implementation, deployment, and management; Security for emerging networks (e.g., smart homes, IoT, body-area networks, VANETs)
 
-8. GadgetMeter: Quantitatively and Accurately Gauging the Exploitability of Speculative Gadgets
+## 8. GadgetMeter: Quantitatively and Accurately Gauging the Exploitability of Speculative Gadgets
 Qi Ling (Purdue University); Yujun Liang, Yi Ren (Tsinghua University); Baris Kasikci (University of Washington and Google); Shuwen Deng (Tsinghua University)
 
 Abstract: Since their emergence in 2018, speculative execution attacks have proven difficult to fully prevent without substantial performance overhead. This is because most mitigations hurt modern processors’ speculative nature, which is essential to many optimization techniques. To address this, numerous scanners have been developed to identify vulnerable code snippets (speculative gadgets) within software applications, allowing mitigations to be applied selectively and thereby minimizing performance degradation.
@@ -72,14 +72,14 @@ In this paper, we show that existing speculative gadget scanners lack accuracy, 
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions; Special problems and case studies: e.g., tradeoffs between security and efficiency, usability, cost, and ethics
 
-9. IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems
+## 9. IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems
 Yuhao Wu (Washington University in St. Louis); Franziska Roesner, Tadayoshi Kohno (University of Washington); Ning Zhang, Umar Iqbal (Washington University in St. Louis)
 
 Abstract: Large language models (LLMs) extended as systems, such as ChatGPT, have begun supporting third-party applications. These LLM apps leverage the de facto natural language-based automated execution paradigm of LLMs: that is, apps and their interactions are defined in natural language, provided access to user data, and allowed to freely interact with each other and the system. These LLM app ecosystems resemble the settings of earlier computing platforms, where there was insufficient isolation between apps and the system. Because third-party apps may not be trustworthy, and exacerbated by the imprecision of natural language interfaces, the current designs pose security and privacy risks for users. In this paper, we evaluate whether these issues can be addressed through execution isolation and what that isolation might look like in the context of LLM-based systems, where there are arbitrary natural language-based interactions between system components, between LLM and apps, and between apps. To that end, we propose IsolateGPT, a design architecture that demonstrates the feasibility of execution isolation and provides a blueprint for implementing isolation, in LLM-based systems. We evaluate IsolateGPT against a number of attacks and demonstrate that it protects against many security, privacy, and safety issues that exist in non-isolated LLM-based systems, without any loss of functionality. The performance overhead incurred by IsolateGPT to improve security is under 30% for three-quarters of tested queries.
 
 Topics: Security and privacy of systems based on machine learning, federated learning, AI, and large language models; Special problems and case studies: e.g., tradeoffs between security and efficiency, usability, cost, and ethics; Usable security and privacy
 
-10. Oreo: Protecting ASLR Against Microarchitectural Attacks
+## 10. Oreo: Protecting ASLR Against Microarchitectural Attacks
 Shixin Song, Joseph Zhang, Mengjia Yan (Massachusetts Institute of Technology)
 
 Abstract: Address Space Layout Randomization (ASLR) is one of the most prominently deployed mitigations against memory corruption attacks. ASLR randomly shuffles program virtual addresses to prevent attackers from knowing the location of program contents in memory. Microarchitectural side channels have been shown to defeat ASLR through various hardware mechanisms. We systematically analyze existing microarchitectural attacks and identify multiple leakage paths. Given the vast attack surface exposed by ASLR, it is challenging to effectively prevent leaking the ASLR secret against microarchitectural attacks.
@@ -88,7 +88,7 @@ Motivated by this, we present Oreo, a software-hardware co-design mitigation tha
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions
 
-11. QMSan: Efficiently Detecting Uninitialized Memory Errors During Fuzzing
+## 11. QMSan: Efficiently Detecting Uninitialized Memory Errors During Fuzzing
 Matteo Marini, Daniele Cono D’Elia (Sapienza University of Rome); Mathias Payer (EPFL); Leonardo Querzoni (Sapienza University of Rome)
 
 Abstract: Fuzzing evolved into the most popular technique to detect bugs in software. Its combination with sanitizers has shown tremendous efficacy in uncovering memory safety errors, such as buffer overflows, that haunt C and C++ programmers. However, an important class of such issues, the so-called use-of-uninitialized-memory (UUM) errors, struggles to gain similar benefits from fuzzing endeavors. The only fuzzer-compatible UUM sanitizer available to date, MSan, requires that all libraries are fully instrumented. Unlike address sanitization, for which partial instrumentation results in false negatives (missed detection of bugs), UUM sanitizers require complete instrumentation to avoid false positives, hampering testing at scale. Yet, full-stack compiler-based instrumentation can be a daunting prospect for compatibility and practicality. As a result, many programs are left untested for UUM bugs.
@@ -99,14 +99,14 @@ We show how to realize this design by using the dynamic binary translation of QE
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions
 
-12. RContainer: A Secure Container Architecture through Extending ARM CCA Hardware Primitives
+## 12. RContainer: A Secure Container Architecture through Extending ARM CCA Hardware Primitives
 Qihang Zhou (Institute of Information Engineering,Chinese Academy of Sciences); Wenzhuo Cao (Institute of Information Engineering,Chinese Academy of Sciences;School of Cyberspace Security, University of Chinese Academy of Sciences); Xiaoqi Jia (Institute of Information Engineering,Chinese Academy of Sciences); Peng Liu (The Pennsylvania State University, USA); Shengzhi Zhang (Department of Computer Science, Metropolitan College, Boston University, USA); Jiayun Chen, Shaowen Xu (Institute of Information Engineering,Chinese Academy of Sciences;School of Cyberspace Security, University of Chinese Academy of Sciences); Zhenyu Song (Institute of Information Engineering, Chinese Academy of Science)
 
 Abstract: Containers have become widely adopted in cloud platforms due to their efficient deployment and high resource utilization. However, their weak isolation has always posed a significant security concern. In this paper, we propose RContainer, a novel secure container architecture that protects containers from untrusted operating systems and enforces strong isolation among containers by extending ARM Confidential Computing Architecture (CCA) hardware primitives. RContainer introduces a small, trusted mini-OS that runs alongside the deprivileged OS, responsible for monitoring the control flow between the operating system and containers. Additionally, RContainer uses shim-style isolation, creating an isolated physical address space called con-shim for each container at the kernel layer through the Granule Protection Check mechanism. We have implemented RContainer on ARMv9-A Fixed Virtual Platform and ARMv8 hardware SoC for security analysis and performance evaluation. Experimental results demonstrate that RContainer can significantly enhance container security with a modest performance overhead and a minimal Trusted Computing Base (TCB).
 
 Topics: Security for cloud/edge computing
 
-13. Retrofitting XoM for Stripped Binaries without Embedded Data Relocation
+## 13. Retrofitting XoM for Stripped Binaries without Embedded Data Relocation
 Chenke Luo (Wuhan University); Jiang Ming (Tulane University); Mengfei Xie, Guojun Peng, Jianming Fu (Wuhan University)
 
 Abstract: System programs are frequently coded in memory-unsafe languages such as C/C++, rendering them susceptible to a variety of memory corruption attacks. Among these, just-in-time return-oriented programming (JIT-ROP) stands out as an advanced form of code-reuse attack designed to circumvent code randomization defenses. JIT-ROP leverages memory disclosure vulnerabilities to dynamically harvest reusable code gadgets and construct attack payloads in real-time. To counteract JIT-ROP threats, researchers have developed multiple execute-only memory (XoM) prototypes to prevent dynamic reading and disassembly of memory pages. XoM, akin to the widely deployed W⊕X protection, holds promise in enhancing security. However, existing XoM solutions may not be compatible with legacy and commercial off-the-shelf (COTS) programs, or they may require patching the protected binary to separate code and data areas, leading to poor reliability. In addition, some XoM methods have to modify the underlying architectural mechanism, compromising compatibility and performance.
@@ -115,7 +115,7 @@ In this paper, we present PXoM, a practical technique to seamlessly retrofit XoM
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions
 
-14. Statically Discover Cross-Entry Use-After-Free Vulnerabilities in the Linux Kernel
+## 14. Statically Discover Cross-Entry Use-After-Free Vulnerabilities in the Linux Kernel
 Hang Zhang (Indiana University Bloomington); Jangha Kim (The Affiliated Institute of ETRI, ROK); Chuhong Yuan (Georgia Institute of Technology); Zhiyun Qian (University of California, Riverside); Taesoo Kim (Georgia Institute of Technology)
 
 Abstract: Use-After-Free (UAF) is one of the most widely spread and severe memory safety issues, attracting lots of research efforts toward its automatic discovery. Existing UAF detection approaches include two major categories: dynamic and static. While dynamic methods like fuzzing can detect UAF issues with high precision, they are inherently limited in code coverage. Static approaches, on the other hand, can usually only discover simple sequential UAF cases, despite that many real-world UAF bugs involve intricate cross-entry control and data flows (e.g., concurrent UAFs). Limited static tools supporting cross-entry UAF detection also suffer from inaccuracy or narrowed scope (e.g., cannot handle complex codebases like the Linux kernel).
@@ -124,7 +124,7 @@ In this paper, we propose UAFX, a static analyzer capable of discovering cross-e
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions
 
-15. The Road to Trust: Building Enclaves within Confidential VMs
+## 15. The Road to Trust: Building Enclaves within Confidential VMs
 Wenhao Wang, Linke Song, Benshan Mei (Key Laboratory of Cyberspace Security Defense, Institute of Information Engineering, CAS); Shuang Liu (Ant Group); Shijun Zhao (Key Laboratory of Cyberspace Security Defense, Institute of Information Engineering, CAS); Shoumeng Yan (Ant Group); XiaoFeng Wang (Indiana University Bloomington); Dan Meng (Institute of Information Engineering, CAS); Rui Hou (Key Laboratory of Cyberspace Security Defense, Institute of Information Engineering, CAS)
 
 Abstract: Integrity is critical for maintaining system security, as it ensures that only genuine software is loaded onto a machine. Although confidential virtual machines (CVMs) function within isolated environments separate from the host, it is important to recognize that users still encounter challenges in maintaining control over the integrity of the code running within the trusted execution environments (TEEs). The presence of a sophisticated operating system (OS) raises the possibility of dynamically creating and executing any code, making user applications within TEEs vulnerable to interference or tampering if the guest OS is compromised.
@@ -133,7 +133,7 @@ To address this issue, this paper introduces NestedSGX, a framework which levera
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions; Trustworthy computing software and hardware to secure networks and systems
 
-16. TME-Box: Scalable In-Process Isolation through Intel TME-MK Memory Encryption
+## 16. TME-Box: Scalable In-Process Isolation through Intel TME-MK Memory Encryption
 Martin Unterguggenberger, Lukas Lamster, David Schrammel (Graz University of Technology); Martin Schwarzl (Cloudflare, Inc.); Stefan Mangard (Graz University of Technology)
 
 Abstract: Efficient cloud computing relies on in-process isolation to optimize performance by running workloads within a single process. Without heavy-weight process isolation, memory safety errors pose a significant security threat by allowing an adversary to extract or corrupt the private data of other co-located tenants. Existing in-process isolation mechanisms are not suitable for modern cloud requirements, e.g., MPK’s 16 protection domains are insufficient to isolate thousands of cloud workers per process. Consequently, cloud service providers have a strong need for lightweight in-process isolation on commodity x86 machines.
@@ -142,7 +142,7 @@ This paper presents TME-Box, a novel isolation technique that enables fine-grain
 
 Topics: Anti-malware techniques: detection, analysis, and prevention; Security for cloud/edge computing; Trustworthy computing software and hardware to secure networks and systems
 
-17. TZ-DATASHIELD: Automated Data Protection for Embedded Systems via Data-Flow-Based Compartmentalization
+## 17. TZ-DATASHIELD: Automated Data Protection for Embedded Systems via Data-Flow-Based Compartmentalization
 Zelun Kong, Minkyung Park (University of Texas at Dallas); Le Guan (University of Georgia); Ning Zhang (Washington University in St. Louis); Chung Hwan Kim (University of Texas at Dallas)
 
 Abstract: As reliance on embedded systems grows in critical domains such as healthcare, industrial automation, and unmanned vehicles, securing the data on micro-controller units (MCUs) becomes increasingly crucial. These systems face significant challenges related to computational power and energy constraints, complicating efforts to maintain the confidentiality and integrity of sensitive data. Previous methods have utilized compartmentalization techniques to protect this sensitive data, yet they remain vulnerable to breaches by strong adversaries exploiting privileged software.
@@ -151,7 +151,7 @@ In this paper, we introduce TZ-DATASHIELD, a novel LLVM compiler tool that enhan
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions; Trustworthy computing software and hardware to secure networks and systems
 
-18. VulShield: Protecting Vulnerable Code Before Deploying Patches
+## 18. VulShield: Protecting Vulnerable Code Before Deploying Patches
 Yuan Li (Zhongguancun Laboratory & Tsinghua University); Chao Zhang (Tsinghua University & JCSS & Zhongguancun Laboratory); Jinhao Zhu (UC Berkeley); Penghui Li (Zhongguancun Laboratory); Chenyang Li (Peking University); Songtao Yang (Zhongguancun Laboratory); Wende Tan (Tsinghua University)
 
 Abstract: Despite the high frequency of vulnerabilities exposed in software, patching these vulnerabilities remains slow and challenging, which leaves a potential attack window. To mitigate this threat, researchers seek temporary solutions to prevent vulnerabilities from being exploited or triggered before they are officially patched. However, prior approaches have limited protection scope, often require code modification of the target vulnerable programs, and rely on recent system features. These limitations significantly reduce their usability and practicality.
@@ -160,7 +160,7 @@ In this work, we introduce VulShield, an automated temporary protection system t
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions
 
-19. BULKHEAD: Secure, Scalable, and Efficient Kernel Compartmentalization with PKS
+## 19. BULKHEAD: Secure, Scalable, and Efficient Kernel Compartmentalization with PKS
 Yinggang Guo (State Key Laboratory for Novel Software Technology, Nanjing University; University of Minnesota); Zicheng Wang (State Key Laboratory for Novel Software Technology, Nanjing University); Weiheng Bai (University of Minnesota); Qingkai Zeng (State Key Laboratory for Novel Software Technology, Nanjing University); Kangjie Lu (University of Minnesota)
 
 Abstract: The endless stream of vulnerabilities urgently calls for principled mitigation to confine the effect of exploitation. However, the monolithic architecture of commodity OS kernels, like the Linux kernel, allows an attacker to compromise the entire system by exploiting a vulnerability in any kernel component. Kernel compartmentalization is a promising approach that follows the least-privilege principle. However, existing mechanisms struggle with the trade-off on security, scalability, and performance, given the challenges stemming from mutual untrustworthiness among numerous and complex components.
@@ -169,7 +169,7 @@ In this paper, we present BULKHEAD, a secure, scalable, and efficient kernel com
 
 Topics: Software/firmware/hardware security analysis, customization, and extensions and Trustworthy computing software and hardware to secure networks and systems
 
-20. Compiled Models, Built-In Exploits: Uncovering Pervasive Bit-Flip Attack Surfaces in DNN Executables
+## 20. Compiled Models, Built-In Exploits: Uncovering Pervasive Bit-Flip Attack Surfaces in DNN Executables
 Yanzuo Chen, Zhibo Liu, Yuanyuan Yuan (The Hong Kong University of Science and Technology); Sihang Hu, Tianxiang Li (Huawei Technologies); Shuai Wang (The Hong Kong University of Science and Technology)
 
 Abstract: Recent research has shown that bit-flip attacks (BFAs) can manipulate deep neural networks (DNNs) via DRAM Rowhammer exploitations. For high-level DNN models running on deep learning (DL) frameworks like PyTorch, extensive BFAs have been conducted to flip bits in model weights and shown effective. Defenses have also been proposed to guard model weights. Nevertheless, DNNs are increasingly compiled into DNN executables by DL compilers to leverage hardware primitives. These executables manifest new and distinct computation paradigms; we find existing research failing to accurately capture and expose the attack surface of BFAs on DNN executables.
@@ -180,7 +180,7 @@ To realistically demonstrate the new attack surfaces, we assume a weak and more 
 
 Topic: Security and privacy of systems based on machine learning, federated learning, AI, and large language models
 
-21. SCRUTINIZER: Towards Secure Forensics on Compromised TrustZone
+## 21. SCRUTINIZER: Towards Secure Forensics on Compromised TrustZone
 Yiming Zhang (Southern University of Science and Technology and The Hong Kong Polytechnic University); Fengwei Zhang (Southern University of Science and Technology); Xiapu Luo (The Hong Kong Polytechnic University); Rui Hou (Institute of Information Engineering, Chinese Academy of Sciences); Xuhua Ding (Singapore Management University); Zhenkai Liang (National University of Singapore); Shoumeng Yan, Tao Wei, Zhengyu He (Ant Group)
 
 Abstract: The number of vulnerabilities exploited in Arm TrustZone systems has been increasing recently. The absence of digital forensics tools prevents platform owners from incident response or periodic security scans. However, the area of secure forensics for compromised TrustZone remains unexplored and presents unresolved challenges. Traditional out-of-TrustZone forensics are inherently hindered by TrustZone protection, rendering them infeasible. In-TrustZone approaches are susceptible to attacks from privileged adversaries, undermining their security.
@@ -189,7 +189,7 @@ To fill these gaps, we introduce SCRUTINIZER, the first secure forensics solutio
 
 Topics: Cyber-crime defense and forensics (e.g., anti-phishing, anti-blackmailing, anti-fraud techniques) and Trustworthy computing software and hardware to secure networks and systems
 
-22. Too Subtle to Notice: Investigating Executable Stack Issues in Linux Systems
+## 22. Too Subtle to Notice: Investigating Executable Stack Issues in Linux Systems
 Hengkai Ye, Hong Hu (The Pennsylvania State University)
 
 Abstract: Code injection was a favored technique for attackers to exploit buffer overflow vulnerabilities decades ago. Subsequently, the widespread adoption of lightweight solutions like write-xor-execute (W⊕X) effectively mitigated most of these attacks by disallowing writable-and-executable memory. However, we observe multiple concerning cases where software developers accidentally disabled W⊕X and reintroduced executable stacks to popular applications. Although each violation has been properly fixed, a lingering question remains: what underlying factors contribute to these recurrent mistakes among developers, even in contemporary software development practices?
@@ -198,7 +198,7 @@ In this paper, we conduct two investigations to gain a comprehensive understandi
 
 Topic: Software/firmware/hardware security analysis, customization, and extensions
 
-23. type++: Prohibiting Type Confusion with Inline Type Information
+## 23. type++: Prohibiting Type Confusion with Inline Type Information
 Nicolas Badoux (EPFL); Flavio Toffalini (Ruhr-Universitat Bochum and EPFL); Yuseok Jeon (UNIST); Mathias Payer (EPFL)
 
 Abstract: Type confusion, or bad casting, is a common C++ attack vector. Such vulnerabilities cause a program to interpret an object as belonging to a different type, enabling powerful attacks, like control-flow hijacking. C++ limits runtime checks to polymorphic classes because only those have inline type information. The lack of runtime type information throughout an object’s lifetime makes it challenging to enforce continuous checks and thereby prevent type confusion during downcasting. Current solutions either record type information for all objects disjointly, incurring prohibitive runtime overhead, or restrict protection to a fraction of all objects.
@@ -207,11 +207,9 @@ Our C++ dialect, type++, enforces the paradigm that each allocated object involv
 
 Topic: Software/firmware/hardware security analysis, customization, and extensions
 
-24. Cross-Origin Web Attacks via HTTP/2 Server Push and Signed HTTP Exchange
+## 24. Cross-Origin Web Attacks via HTTP/2 Server Push and Signed HTTP Exchange
 Pinji Chen (Tsinghua University); Jianjun Chen (Tsinghua University and Zhongguancun Laboratory); Mingming Zhang (Zhongguancun Laboratory); Qi Wang, Yiming Zhang, Mingwei Xu, Haixin Duan (Tsinghua University)
 
 Abstract: In this paper, we investigate the security implications of HTTP/2 server push and signed HTTP exchange (SXG) on the Same-Origin Policy (SOP), a fundamental web security mechanism designed to prevent cross-origin attacks. We identify a vulnerability introduced by these features, where the traditional strict SOP origin based on URI is undermined by a more permissive HTTP/2 authority based on the SubjectAlternativeName (SAN) list in the TLS certificate. This relaxation of origin constraints, coupled with the prevalent use of shared certificates among unrelated domains, poses significant security risks, allowing attackers to bypass SOP protections. We introduce two novel attack vectors, CrossPUSH and CrossSXG, which enable an off-path attacker to execute a wide range of cross-origin web attacks, including arbitrary cross-site scripting (XSS), cookie manipulation, and malicious file downloads, across all domains listed in a shared certificate. Our investigation reveals the practicality and prevalence of these threats, with our measurements uncovering vulnerabilities in widely-used web browsers such as Chrome and Edge, and notable websites including Microsoft. We responsibly disclose our findings to affected vendors and receive acknowledgments from Huawei, Baidu, Microsoft, etc.
 
 Topic: Security of web-based applications and services (e.g., social networking, crowd-sourcing, fake news/disinformation), web security and privacy
-
-

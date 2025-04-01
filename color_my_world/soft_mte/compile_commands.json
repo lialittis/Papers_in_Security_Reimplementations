@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/build",
+  "command": "/usr/bin/c++ -Dtag_allocator_EXPORTS -I/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/include -fPIC -std=gnu++17 -o CMakeFiles/tag_allocator.dir/src/tag_allocator.cpp.o -c /home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/src/tag_allocator.cpp",
+  "file": "/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/src/tag_allocator.cpp"
+},
+{
+  "directory": "/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/build",
+  "command": "/usr/bin/c++ -Dtag_checker_EXPORTS -I/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/include -fPIC -std=gnu++17 -o CMakeFiles/tag_checker.dir/src/tag_checker.cpp.o -c /home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/src/tag_checker.cpp",
+  "file": "/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/src/tag_checker.cpp"
+},
+{
+  "directory": "/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/build",
+  "command": "/usr/bin/c++  -I/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/include -g -std=gnu++17 -o CMakeFiles/test_memory.dir/test/test_main.cpp.o -c /home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/test/test_main.cpp",
+  "file": "/home/tianchi/Workspace/Github/Papers_in_Security_Reimplementations/color_my_world/soft_mte/test/test_main.cpp"
+}
+]

@@ -5,8 +5,9 @@
 #include <stdint.h>
 #include <time.h>
 #include <unordered_map>
+#include <map>
 
-static std::unordered_map<uintptr_t, uint8_t> shadow_memory;
+static std::map<uintptr_t, uint8_t> shadow_memory;
 
 uint8_t generate_tag() {
   return rand() & 0xF;  // Random tag between 0x0 and 0xF
@@ -23,22 +24,20 @@ void* tagged_malloc(size_t size) {
 
     uintptr_t raw_addr = reinterpret_cast<uintptr_t>(ptr);
     uintptr_t tagged_ptr = (raw_addr & PTR_MASK) | (static_cast<uintptr_t>(tag) << 60);
-    // std::cout << "[DEBUG] test_map[123456] = " << std::endl;
-    // std::unordered_map<unsigned long, unsigned char> test_map;
-    // test_map[123456] = 255;
-    // std::cout << "[DEBUG] test_map[123456] = " << (int)test_map[123456] << std::endl;
+
+
     std::cout << "[DEBUG] Before shadow_memory assignment, raw_addr = " << raw_addr << std::endl;
     std::cout << "[DEBUG] shadow_memory size = " << shadow_memory.size() << std::endl;
     std::cout.flush();
+    shadow_memory.insert({raw_addr, tag});
     shadow_memory[raw_addr] = tag;  // Efficient insertion
     std::cout << "[DEBUG] tagged_malloc: Allocated " << size
               << " bytes at " << raw_addr
               << " with tag " << (int)tag
               << " -> Tagged pointer: " << tagged_ptr << std::endl;
-    std::cout.flush();  // Force flushing output
+    std::cout.flush();
     return reinterpret_cast<void*>(tagged_ptr);
 }
-
 
 void tagged_free(void* tagged_addr) {
   uintptr_t raw_addr = (uintptr_t)tagged_addr & PTR_MASK;

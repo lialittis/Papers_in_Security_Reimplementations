@@ -11,6 +11,7 @@ include_directories(include)
 
 # Create a shared library for tagged allocator
 add_library(tag_allocator SHARED src/tag_allocator.cpp)
+# target_compile_options(tag_allocator PRIVATE)
 
 # Create a shared library for tag checker
 add_library(tag_checker SHARED src/tag_checker.cpp)

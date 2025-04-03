@@ -23,10 +23,7 @@ void* tagged_malloc(size_t size) {
 
     uintptr_t raw_addr = reinterpret_cast<uintptr_t>(ptr);
     uintptr_t tagged_ptr = (raw_addr & PTR_MASK) | (static_cast<uintptr_t>(tag) << 60);
-    // std::cout << "[DEBUG] test_map[123456] = " << std::endl;
-    // std::unordered_map<unsigned long, unsigned char> test_map;
-    // test_map[123456] = 255;
-    // std::cout << "[DEBUG] test_map[123456] = " << (int)test_map[123456] << std::endl;
+
     std::cout << "[DEBUG] Before shadow_memory assignment, raw_addr = " << raw_addr << std::endl;
     std::cout << "[DEBUG] shadow_memory size = " << shadow_memory.size() << std::endl;
     std::cout.flush();
@@ -35,10 +32,9 @@ void* tagged_malloc(size_t size) {
               << " bytes at " << raw_addr
               << " with tag " << (int)tag
               << " -> Tagged pointer: " << tagged_ptr << std::endl;
-    std::cout.flush();  // Force flushing output
+    std::cout.flush();
     return reinterpret_cast<void*>(tagged_ptr);
 }
-
 
 void tagged_free(void* tagged_addr) {
   uintptr_t raw_addr = (uintptr_t)tagged_addr & PTR_MASK;
@@ -56,21 +52,20 @@ uint8_t get_shadow_tag(void* tagged_ptr) {
   uintptr_t raw_pointer = (uintptr_t)tagged_ptr & PTR_MASK;
   auto it = shadow_memory.find(raw_pointer);
 
-  std::cout << "[DEBUG] get_shadow_tag: Looking for addr " << raw_pointer << std::endl;
+  // std::cout << "[DEBUG] get_shadow_tag: Looking for addr " << raw_pointer << std::endl;
 
   if (it != shadow_memory.end()) {
     std::cout << "[DEBUG] Found tag: " << (int)it->second << std::endl;
     return it->second;
   } else {
-    std::cout << "[DEBUG] Tag not found in shadow_memory!" << std::endl;
-    return 0xFF;
+    // std::cout << "[DEBUG] Tag not found in shadow_memory!" << std::endl;
+    return 0x00;
   }
 }
 
 int validate_pointer(void* tagged_ptr) {
   uint8_t actual_tag = get_pointer_tag(tagged_ptr);
   uint8_t expected_tag = get_shadow_tag(tagged_ptr);
-  std::cout << "actual_tag: " << (int)actual_tag << " ?= expected_tag: " << (int)expected_tag << "\n";
   return actual_tag == expected_tag; 
 }
 

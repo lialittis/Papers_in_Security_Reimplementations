@@ -125,54 +125,59 @@ if (!validate_pointer((void*)src) || !validate_pointer(dest)) {
 
 ---
 
-## **🚀 Step 3: Implement Tag Propagation for Pointer Arithmetic**
+## **🚀 Step 3: Compiler Instrumentation (Sanitizer Pass)**
 
-Now that **tagged memory allocation** and **runtime validation** are in place, the next step is ensuring **tag propagation during pointer arithmetic**.
 
----
+- **Goal**: Inject tag checks for **every load/store** (e.g., `*ptr`, `ptr->field`).
+- **Implementation**:
+  1. **Clang LLVM Pass**:
+     - Insert a call to a validation function before every load/store.
+     - Example IR transformation:
+       ```llvm
+       ; Original IR: store i32 5, i32* %ptr
+       ; Instrumented IR:
+       call void @validate_tag(i32* %ptr)
+       store i32 5, i32* %ptr
+       ```
+  2. **Validation Function**:
+     ```c
+     void validate_tag(void *ptr) {
+       uintptr_t real_ptr = (uintptr_t)ptr & ~0xF;
+       uint8_t ptr_tag = (uintptr_t)ptr & 0xF;
+       uint8_t shadow_tag = shadow_base[real_ptr >> 4];
+       if (shadow_tag != ptr_tag) abort();
+     }
+     ```
+- **Testing**:
+  - Compile a test program with the sanitizer pass.
+  - Verify that tag mismatches (e.g., buffer overflows) trigger aborts.
 
-### **🔍 What Needs to Be Implemented?**
-1. **Ensure pointer tags persist when performing arithmetic** (e.g., `ptr + offset`).
-2. **Prevent invalid tag modifications** (e.g., `ptr | 0xF000000000000000` should not introduce forged tags).
-3. **Modify load/store operations** to maintain tags across calculations.
-4. **Support pointer manipulation functions** such as `memcpy`, `memmove`, and `realloc`.
-
----
-
-### **🔑 Key Components**
-| Component            | Purpose |
-|----------------------|---------|
-| **Tagged Arithmetic** | Preserve tags when doing pointer arithmetic. |
-| **Tag-Checking Wrapper** | Ensure that after pointer arithmetic, the resulting pointer is still valid. |
-| **Safe Load/Store** | Update shadow memory for newly computed addresses. |
-| **Tag Forgery Prevention** | Disallow setting arbitrary tag bits manually. |
-
----
-
-#### **1️⃣ Modify Pointer Arithmetic Functions**
-
-We redefine arithmetic operations to preserve pointer tags.
-
-- **Tagged Pointer Addition**
-- **Tagged Pointer Subtraction**
----
-
-#### **2️⃣ Wrap Load/Store Operations**
-
-When loading or storing data, ensure the pointer is still tagged correctly.
-
-- **Safe Memory Load**
-- **Safe Memory Store**
 
 ---
 
-### **3️⃣ Prevent Tag Forgery**
-Ensure that manual modifications of tags are **not allowed**.
+## **TODO: Optimizations**
 
+#### **Step 1: Fix Tagging and Shadow Memory**
+1. **Tag in Lower Bits**:  
+   - Use 16-byte aligned allocations (`aligned_alloc(16, size)`).  
+   - Store tags in bits 3:0 of the pointer.  
+2. **Shadow Memory**:  
+   - Reserve a shadow region with `mmap`.  
+   - Map each 16-byte app memory chunk to 1 byte in shadow memory.  
+   - Use `mprotect(PROT_NONE)` + signal handler to lazily allocate physical pages for sparse shadow memory.  
+
+#### **Step 2: Improve `LD_PRELOAD` Hooks**
+1. **Interpose All Memory Functions**:  
+   - Hook `malloc`, `free`, `memcpy`, `memset`, `memmove`, etc.  
+   - Use `dlsym(RTLD_NEXT, ...)` to chain to original implementations.  
+2. **Validate Tags in Hooks**:  
+   - For `memcpy(dest, src, size)`, validate tags for both `dest` and `src` ranges.  
+   - Example:  
+     ```c
+     for (size_t i = 0; i < size; i += 16) {
+       validate_tag(dest + i);
+       validate_tag(src + i);
+     }
+     ```
 ---
 
-## **🛠️ Next Steps**
-1. ✅ **Implement these functions** into your project.
-2. ✅ **Update test cases** to validate pointer arithmetic behavior.
-3. ✅ **Extend `memcpy` and `memmove` hooks** to handle tagged pointers correctly.
-4. ✅ **Integrate with runtime validation** for enhanced security.

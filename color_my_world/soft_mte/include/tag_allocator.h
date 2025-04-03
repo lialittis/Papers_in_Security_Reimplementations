@@ -16,7 +16,7 @@ uint8_t get_shadow_tag(void* tagged_ptr);
 int validate_pointer(void* tagged_ptr);
 
 #ifdef TESTING
-#pragma message("TESTING macro is defined");
+/* #pragma message("TESTING macro is defined") */
   void set_shadow_tag (uintptr_t raw_pointer, uint8_t tag);
 #endif // TESTING
 

@@ -14,5 +14,4 @@ extern "C" {
     void* memset(void* ptr, int value, size_t num);
 }
 
-
 #endif // TAG_CHECKER_H

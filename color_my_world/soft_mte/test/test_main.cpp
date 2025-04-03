@@ -10,19 +10,19 @@ void test_valid_memcpy() {
     std::cout << "[TEST] Valid memcpy with tagged memory..." << std::endl;
 
     void* src = tagged_malloc(64);
-    // void* dest = tagged_malloc(64);
+    void* dest = tagged_malloc(64);
 
-    // if (!src || !dest) {
-        // std::cerr << "[ERROR] Memory allocation failed!" << std::endl;
-        // return;
-    // }
+    if (!src || !dest) {
+        std::cerr << "[ERROR] Memory allocation failed!" << std::endl;
+        return;
+    }
 
-    // Simulate setting a valid tag
+    //Simulate setting a valid tag
     set_memory_tag(&src, 0b1100);
-    // set_memory_tag(&dest, 0b1100);
+    set_memory_tag(&dest, 0b1100);
 
     // Perform memcpy (should succeed)
-    // memcpy(dest, src, 64);
+    memcpy(dest, src, 64);
 
     std::cout << "[PASS] memcpy with valid tags worked!" << std::endl;
 

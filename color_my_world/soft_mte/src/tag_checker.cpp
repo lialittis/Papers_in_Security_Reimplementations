@@ -13,7 +13,6 @@ class TagChecker {
 public:
   static void *hook_memcpy(void *dest, const void *src, size_t n) {
     static memcpy_t real_memcpy = (memcpy_t)dlsym(RTLD_NEXT, "memcpy"); // ensures that real_memcpy is only initialized once per process.
-    std::cout << "memcpy func\n";
     if (!validate_pointer((void*)src) || !validate_pointer((void*)dest)) {
       std::cerr << "[MTE ERROR] Memory access violation! Tag mismatch detected.\n";
       std::abort();
